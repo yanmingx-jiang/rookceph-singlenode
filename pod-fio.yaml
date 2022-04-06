@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: csirbd-fio-pod
+spec:
+  containers:
+    - name: fio-test
+      image: diamanti/iperf-fio
+      imagePullPolicy: IfNotPresent
+      command: ["/bin/bash", "-ce", "tail -f /dev/null"]
+      volumeMounts:
+        - name: mypvc
+          mountPath: /opt
+  volumes:
+    - name: mypvc
+      persistentVolumeClaim:
+        claimName: rbd-pvc
+        readOnly: false
