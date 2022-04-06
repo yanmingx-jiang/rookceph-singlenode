@@ -1,0 +1,1 @@
+# rookceph-singlenode
