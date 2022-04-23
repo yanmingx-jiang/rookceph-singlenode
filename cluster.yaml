@@ -207,7 +207,7 @@ spec:
 #    osd: rook-ceph-osd-priority-class
 #    mgr: rook-ceph-mgr-priority-class
   storage: # cluster level storage configuration and selection
-    useAllNodes: true
+    useAllNodes: false
     useAllDevices: false
     # deviceFilter: "sd[a-c]"
     config:
